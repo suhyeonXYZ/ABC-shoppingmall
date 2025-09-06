@@ -2,9 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: backend
+  labels:
+    app: backend
 spec:
+  selector:
+    matchLabels:
+      app: backend
   template:
+    metadata:
+      labels:
+        app: backend
     spec:
       containers:
-      - name: backend     
+      - name: backend
         image: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend:latest
