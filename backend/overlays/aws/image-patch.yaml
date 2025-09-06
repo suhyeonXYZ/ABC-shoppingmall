@@ -1,5 +1,10 @@
-# kustomization.yaml
-images:
-  - name: backend
-    newName: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend
-    newTag: latest
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: backend
+spec:
+  template:
+    spec:
+      containers:
+      - name: backend     
+        image: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend:latest
