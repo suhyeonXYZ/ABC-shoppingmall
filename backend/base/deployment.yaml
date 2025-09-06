@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend-image
+        image: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend
         ports:
         - containerPort: 8000
         env:
