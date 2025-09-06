@@ -8,7 +8,9 @@ replicas:
   name: frontend
 
 images:
-- name: frontend-image
+- name: frontend
+  newName: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-frontend
+  newTag: 0.1.0
 
 patches:
 - path: resource-patch.yaml
