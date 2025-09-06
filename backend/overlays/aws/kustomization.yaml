@@ -12,3 +12,10 @@ images:
   - name: backend
     newName: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend
     newTag: latest
+
+
+patches:
+  - path: rollout-resource-patch.yaml
+    target:
+      kind: Rollout
+      name: backend
