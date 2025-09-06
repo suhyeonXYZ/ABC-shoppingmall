@@ -14,7 +14,7 @@ images:
     newTag: latest
 
 patches:
-  - path: rollout-resource-patch.yaml
+  - path: rollout-resource-path.yaml
     target:
       kind: Rollout
       name: backend
