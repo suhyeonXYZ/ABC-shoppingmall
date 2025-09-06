@@ -4,18 +4,17 @@ kind: Kustomization
 resources:
   - ../../base
 
-replicas:
-  - name: backend
-    count: 2
-
 images:
   - name: backend
     newName: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend
     newTag: latest
 
 patches:
-  - path: rollout-resource-path.yaml
+  - path: rollout-resource-patch.yaml
     target:
       kind: Rollout
       name: backend
-
+  - path: replica-patch.yaml
+    target:
+      kind: Rollout
+      name: backend

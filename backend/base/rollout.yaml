@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: 1
+  replicas: 1   # 기본값 (overlay에서 덮어쓸 수 있음)
   selector:
     matchLabels:
       app: backend
