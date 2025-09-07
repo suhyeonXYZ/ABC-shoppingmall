@@ -17,3 +17,7 @@ patches:
     target:
       kind: Rollout
       name: backend
+  - patch: resource-patch.yaml
+    target:
+      king: Rollout
+      name: backend
