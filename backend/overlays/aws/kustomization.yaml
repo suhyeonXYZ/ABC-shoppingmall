@@ -5,15 +5,15 @@ resources:
   - ../../base
 
 patches:
-  - path: rollout-resource-patch.yaml
-    target:
-      kind: Rollout
-      name: backend
   - path: image-patch.yaml
     target:
       kind: Rollout
       name: backend
   - path: replica-patch.yaml
+    target:
+      kind: Rollout
+      name: backend
+  - path: rollout-resource-patch.yaml
     target:
       kind: Rollout
       name: backend
