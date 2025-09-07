@@ -36,6 +36,13 @@ spec:
             port: 8000
           initialDelaySeconds: 15
           periodSeconds: 20
+        resources:        # ✅ 원본에도 추가
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
   strategy:
     canary:
       steps:
