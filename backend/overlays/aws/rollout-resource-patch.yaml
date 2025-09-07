@@ -7,6 +7,7 @@ spec:
     spec:
       containers:
       - name: backend
+        image: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend:0.2.0
         resources:       
           requests:
             memory: "256Mi"
