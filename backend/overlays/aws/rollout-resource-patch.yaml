@@ -7,11 +7,30 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 983460235393.dkr.ecr.ap-northeast-2.amazonaws.com/ssh-backend:0.2.0
-        resources:       
+        image: new-image:0.2.0
+        ports:
+        - containerPort: 8000
+        env:
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "8000"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        resources:
           requests:
+            cpu: "100m"
             memory: "256Mi"
-            cpu: "200m"
           limits:
+            cpu: "300m"
             memory: "512Mi"
-            cpu: "500m"
